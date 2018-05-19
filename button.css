@@ -1,0 +1,36 @@
+button {
+    font-size: 64px;   
+    background-color: orangered;
+}
+
+button:hover {
+    background-color: orange;
+}
+
+button:focus {
+    background-color: black;
+    color: white;
+}
+
+button:active {
+    background-color: yellow;
+    color: black;
+}
+
+h1::first-letter {
+    font-size: 200%;
+    color: red;
+}
+
+h1::
+
+p {
+    display: none;
+    background-color: blue;
+    color: white;
+    margin-top: 200px;
+}
+
+button:hover p {
+    display: block;
+}
