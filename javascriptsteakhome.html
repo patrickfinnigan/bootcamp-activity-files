@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>beef</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    
+<script type="text/javascript"> // always add this script tag to give you somewhere to put your javascript 
+
+
+//ask the user if they want steak
+    // ^^^^^ always remember to add psuedocode!
+var eatSteak = confirm("do you eat steak?");
+alert(eatSteak);
+
+// the following piece of code is a boolean line, or a true/false line of code. we assign the operation, "var eatSteak" to record the result of its operation. "confirm" is what will present an alert with a confirm/cancel code, and the message in the parentheses is what the alert will say. depending on the answer, the "eatSteak" operation will carry that answer and apply it to wherever it shows up in later code strings. the alert right below it is used to test "eastSteak" by telling us what it sees when we select an option. when we choose confirm, eatSteak sees that as a true statement, and when we choose cancel, it sees that as false. now that we know how eatSteak sees those options, we can use what it sees in the following code
+
+//have one option for steak, and another option for no steak
+if(eatSteak) {
+    alert("User chose steak!");
+    document.write("heres a steak");
+} else {
+    alert("user didnt choose steak");
+    document.write("heres a tofu stirfry")
+}
+
+// in an if/else line, it works with an operation using a true/false result and does one of two or more actions based on the result of its associated operation. in this case, "eatSteak" gives us a true/false reponse when it sees the user entry as either conform or cancel respectivly. as you can see, the if/else statment is listening for what "eatSteak" has to say, as seen by its reference in the parentheses. if the if/else hears eatSteak say "true", it does the if statement since they are both first. if it hears cancel, then they do the only other option they have, which is using the else statment
+
+// the "document.write" action simply prints out whatever is in the parentheses onto the html
+
+//ask the user what year they were born in
+var year = prompt("what year were you born in?")
+
+// the "prompt" format is like alert and confirm, but this time it asks the user for a text entry. in this case, the "year" operation is going to listen for what the user types in the text box, and apply that answer to wherever the year prompt shows up
+
+//tell them if they can have sake or not
+if (year < 1995) {
+    alert("sake sake sake!!");
+} else if (year > 1995) {
+    alert("no sake for you kid");
+} else {
+    alert("you inched by! sake sake sake!");
+}
+
+//like the previous operation, the sake operation is listening for whatever the year operation gets. the sake operation takes that number and places it where the year operation is in its code. in this case, if the year operation gets the year 1994, then imagine the word year in the sake operation is replaced by the year that the year operation got. then it decides which statement is true in its code and goes with the action that comes up true. in this case, since 1994 is greater than 1995, then the first alert is true if you simply replace "year" with "1994". if it was 1993, then the second operation would be true, and if its equal, meaning its neither more nor less, then it goes with the remaining else option
+
+</script>
+
+
+</body>
+</html>

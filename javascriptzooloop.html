@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>zoo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        
+        var animals = ["zebra", "rhino", "giraffe", "owl", "doggo"]
+
+        //var length = animals.length
+        //console.log(length);
+
+        // remember that the length of a variable like "animals" is always one more than the index count of the elements in the variable!
+
+        for (var i = 0; i < animals.length; i++) {
+            console.log(animals[i]);
+        }
+
+        //this line of code below the animals variable is called a For Loop. a for loop is a set of instructions until a set condition is reached. 
+        // it is made up of three parts as it is right now
+        // the first part sets a variable, known as "i" or "integer", at 0. this is the base level of the for loop when the program starts up
+        // next is the condition for the variable. it says that if i is less than "animals.length", which is the length of the number of elements on the "animals" variable, then it will move on to the next action. 
+        // the last bit is the action, which is at the end. it states that if the conditions of the variable are true, then one is added to the integer to make a new integer, which will be recalculated again in the variable
+        // since the number of elements in the "animals" variable is 4, as shown by the console log of "var length" right below it, then the integer will keep going up until it is no longer less than the length of 4. if the integer reaches 4, then the condition will no longer be true
+
+        //the console.log inside the for loop tells the computer to display the animal index that corresponds to whatever value the current integer variable is. if the integer is at 2, then it will print whatever animal is number 2 by index, in this case the giraffe
+        //keep in mind that the for loop does this console.log action whenever the conditional is true. as long as the conditional is true, in this case as long as the integer is less than the length of objects in "animals", then it will keep doing its assigned console.log action until the conditional is no longer true
+          
+    </script>
+
+</body>
+</html>
