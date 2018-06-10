@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>rock paper scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <div id="game">
+        <h1>press r, p, or s, to play</h1>
+    </div>
+
+    <script type="text/javascript">
+
+        var options = ["r", "p", "s"];
+        var wins = 0;
+        var loses = 0;
+        var ties = 0;
+
+        // the "options" line of code is a way of telling the computer what choices it has for playing rock paper scissors. it makes a letter pool called "options" for it to be used later
+        // the wins, losses, and ties variables are for keeping score. 
+
+        document.onkeyup = function() {
+            // alert("working");
+            var userguess = String.fromCharCode(event.keyCode).toLowerCase();
+            console.log(userguess);
+        
+        // this code is made to test whether the program detects any entry by the user on the keyboard. this is shown by the "onkeyup" instruction. the "function" keyword in the code is for activating the instructions in the brackets when they onkeyup event occurs. since it isnt specified, the event occurs whenever any button on the keyboard is pressed
+
+        // on line 16, the function is set to create a new variable called "userguess" whenever it is activated, and to equate it to the key that had just been pressed. this is shown by the "event.keyCode" value, as in the event of a pressed key shows its code! inside that bit of code, we can see that its next to a "String.fromCharCode" operation. This means that the character code in the brackets will be made into a string. that string will then be used to equate to "userguess". the "toLowerCase" segment simply tells the code above to consider all key entries as lower case values, just in case the program doesnt get confused by upper case keys
+
+        //console.log is simply a way to tell the function to display whatever the userguess' string is in the browser console
+
+        var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+        console.log(computerGuess);
+        
+        // this variable, "computerGuess", is to make the computer make a guess from the options in the previously made "options" library. it will choose an option based on the calculation made by the computer that computerGuess is equal to 
+        // "math.random" is a command to make the computer to choose a number between 0 and 1.
+        // that number is then multiplied by "options.length", or the number of options in the "options" array. Keep in mind that the length of options in this array, used in this manner, is always +1 more than the number of index's in an array. in this case, the indexes for r, p, and s, which is usuallty "0, 1, 2" will been seen by Math.random as "1, 2, 3", or multiplied by 3. 
+        // Math.floor tells the multiplied Math.random value to be rounded down, or to the floor level of its number, no matter what the following decimal is. this is because we want to avoid getting a value outside the array options
+        //
+
+        if (userguess=="r" || userguess=="p" || userguess=="s") {
+            // alert("chosen correct");
+
+            if ((userguess=="r") && (computerGuess=="s")) {
+                wins++;
+                //here, the code says that whenever this if statement happens, then it adds 1 to the base value of the wins variable
+            }
+            if ((userguess=="p") && (computerGuess=="r")) {
+                wins++;
+            }
+            if ((userguess=="s") && (computerGuess=="p")) {
+                wins++;
+            }
+            if ((userguess=="r") && (computerGuess=="p")) {
+                loses++;
+            }
+            if ((userguess=="p") && (computerGuess=="s")) {
+                loses++;
+            }
+            if ((userguess=="s") && (computerGuess=="r")) {
+                loses++;
+            }
+            if (userguess==computerGuess) {
+                ties++;
+            }
+        } else {
+            alert("please choose r, p, or s");
+        }
+        
+        //coming back to the userguess line again, "userguess" is taken from it's string and placed here, to be determined if it is an acceptible value for the game. in the code, the if/else statement is whether or not the entered key is either r, p, or s, and that is shown by userguess being compared to those letters. the double equal sign means that userguess and any of the valid letters are being tested for loose equality, which means they are being tested whether or not they share the same text, regardless of the type of text they are. since userguess is a value, and the letter is a string, as shown by the quotes, then they will be equal if the right input was pressed. However, if they were equated with three equal signs, or being equated with tight equality, they will not equal because, althought they are the same thing, userguess is a value and the quoted letters are strips, which do not equal.
+
+        // the double strikethroughs, ||, are for separating different entries in this operation. think of them as the computer's way of understanding "or", as in "the uder entry can be r OR p"
+        // && is the same, only as "and"
+
+        var html= "<h1>press r, p, or s to start</h1>" +
+        "<h2>wins: " + wins + "</h2>" +
+        "<h2>losses: " + loses + "</h2>" +
+        "<h2>ties " + ties + "</h2>";
+
+        // this new "html" variable is for utilizing our wins, loses, and ties values into html. its inside of quote marks so that it's not confused with javascript code
+
+        document.querySelector("#game").innerHTML = html;
+
+        //this command targets the div "#game", then targets the html inside that div, and then replaced the inner HTML with the variable "html", which is updated everytime we press a valid button
+
+        }
+ 
+    </script>
+</body>
+</html>
