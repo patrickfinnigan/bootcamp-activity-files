@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>drinkos</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <h1>Drink Selection!</h1>
+  <hr>
+
+  <!-- Here we create a generic drink-options div -->
+  <div id="drinkOptions"></div>
+
+  <script type="text/javascript">
+
+    // Array holds all of the drinks available
+    var drinkList = [
+      "Coffee: $5",
+      "Espresso: $7",
+      "Cappuccino: $6",
+      "Latte: $4",
+      "Tea: $3",
+      "Ice Coffee: $6",
+      "Ice Espresso: $8",
+      "Ice Latte: $6",
+      "Ice Tea: $4",
+      "Test Drink: $99"
+    ];
+
+    // 1. Create code that "grabs" the div with the matching id (#drink-options);
+    // ...
+    // var drinkDiv = document.getElementById("drinkOptions");
+    var drinkDiv = $("#drinkOptions");
+    // in jQuery, we can place the #drinkOptions id into the new variable     drinkDiv without having to type out "document.getElementById" like     in javascript. you can simply use the $ selector and by defining       the id with a hashtag
+
+
+    // 2. Create a for loop that creates HTML content of all the drinks using JavaScript.
+    for (let index = 0; index < drinkList.length; index++) {
+      //the actions stored in this for loop are done everytime the index increments
+      //this variable creates a new "div" element everytime the loop repeats
+      //var newDrinkDiv = document.createElement("div");
+
+
+      // everytime the previous variable makes a new div, this variable takes that newly made newDrinkDiv variable and shoves the html of whatever drinkList object the index is currently on
+      //newDrinkDiv.innerHTML = drinkList[index];
+
+      var newDrinkDiv = $('<div>' + drinkList[index] + '</div>');
+      // thanks to jQuery, the last two lines of code can be done with a sinle line. thats because we can still create a new variable that will create a new div, and while its doing that, also add in the current drinkList object into the current loop
+      // normally you have to create a blank div and fill it with html in two separate steps, but jQuery lets you add your html in the same line that you create your new html elements!
+
+
+      // the last step in the process is to append the newly made code. this line appends the latest div entry into the bottom of the targeted div, drinkDiv. remember that the previous code does absolutly nothing unless you print or append the results in some way!
+      //drinkDiv.appendChild(newDrinkDiv);
+
+      drinkDiv.append(newDrinkDiv);
+      // in jQuery, this process is almost the same
+        }
+
+
+    // HINT: You will need to use each of the following methods: createElement, textContent, appendChild
+    // ...
+
+
+    // ...
+
+  </script>
+
+</body>
+</html>
