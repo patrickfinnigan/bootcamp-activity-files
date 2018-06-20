@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>fizzbuzz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        
+        for (let index = 1; index < 101; index++) {
+            // the ifelse check for both 3 and 5 multiples are placed up here first rather than below the other two.
+            if (index % 3 === 0 && index % 5 === 0) {
+                console.log("fizzBuzz!");
+            } else if (index % 5 === 0){
+                console.log("buzz");
+            } else if (index % 3 === 0){
+                console.log("fizz");
+            } else {
+                console.log(index)
+                // the colsone.log code is down here because we want the computer to log out the fizzbuzz words first, and if the numbers dont apply to the ifelse satements, then it prints out the number instead. if it was on top, it would print all the numbers AND THEN the corresponding words
+            }
+            }
+
+    </script>
+</body>
+</html>

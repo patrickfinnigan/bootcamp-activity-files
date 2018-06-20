@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Weather Data</title>
+</head>
+
+<body>
+    <!-- Retrieved data will be dumped here -->
+
+    <h1><span id="name">City</span> Data</h1>
+
+    <div class="city"></div>
+    <div class="wind"></div>
+    <div class="humidity"></div>
+    <div class="temp"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        // This is our API key. Add your own API key between the ""
+        var APIKey = "96caba24d857c1b36432802f87241034";
+
+        // Here we are building the URL we need to query the database
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=Bujumbura,Burundi&appid=" + APIKey;
+
+        // We then created an AJAX call
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+            //.ajax pulls the queryURL variable and applies the GET methon on it to get the api's info
+            // below, it uses the .then operation to create a function that contains the information the api repsonded with, or response
+        }).then(function (response) {
+            // Create CODE HERE to Log the queryURL
+            console.log(queryURL);
+            // Create CODE HERE to log the resulting object
+            console.log(response);
+            // Create CODE HERE to transfer content to HTML
+            $(".city").html(response.name);
+            $(".wind").html(response.wind.speed);
+            $(".humidity").html(response.main.humidity);
+            //take the city display object and put in html of the name object of the response data
+            $("#name").html(response.name);
+            // Create CODE HERE to calculate the temperature (converted from Kelvin)
+            var degreesF = 9/5 * (response.main.temp - 273) + 32
+            // Hint: To convert from Kelvin to Fahrenheit: F = (K - 273.15) * 1.80 + 32
+            // Create CODE HERE to dump the temperature content into HTML
+            $(".temp").html(degreesF);
+
+        });
+    </script>
+</body>
+
+</html>
