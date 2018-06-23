@@ -57,14 +57,10 @@
             // Then give it an ID in the following form:
             // "item-4" or "item-3" or "item-99", where the number is equal to toDoCount.
             // Then append the to-do "value" as text to this <p> element.
-            toDoEntry.attr("id", "item-", +toDoCount)
+            toDoEntry.attr("id", "item-" + toDoCount)
             toDoEntry.append(toDoValue)
 
-
-            $("#add-to-do").on("click", function () {
-                console.log(toDoValue);
-                toDoEntry;
-            });
+            console.log(toDoValue);
 
             // Create a button with unique identifiers based on what number it is in the list. Again use jQuery to do this.
             // Give your button a data attribute called data-to-do and a class called "checkbox".
@@ -79,10 +75,10 @@
             toDoEntry.prepend(newBtn)
 
             // Add the button and toDoItem to the to-dos div
-            $("to-dos").append(toDoEntry)
+            $("#to-dos").append(toDoEntry)
 
             // Clear the textbox when done
-            $("to-do").val('')
+            $("#to-do").val('')
 
             // Add to the toDoCount
             toDoCount++
@@ -93,9 +89,10 @@
         //  Because we are creating click events on "dynamic" content, we can't just use the usual "on" "click" syntax.)
         // google "jquery event delegation" to learn more
         $(document.body).on("click", ".checkbox", function () {
-
             // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
             var todoNumber = $(this).attr("data-to-do");
+            console.log(todoNumber);
+            $("#item-" + todoNumber).remove();
 
             // Select and Empty the specific <p> element that previously held the to do item number.
 
