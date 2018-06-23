@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stop: It's Giphy time</title>
+</head>
+
+<body>
+  <img src="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif" data-still="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200_s.gif"
+    data-animate="https://media1.giphy.com/media/3o85xkQpyMlnBkpB9C/200.gif" data-state="still" class="gif">
+  <img src="https://media2.giphy.com/media/8rFQp4kHXJ0gU/200_s.gif" data-still="https://media2.giphy.com/media/8rFQp4kHXJ0gU/200_s.gif"
+    data-animate="https://media2.giphy.com/media/8rFQp4kHXJ0gU/200.gif" data-state="still" class="gif">
+  <img src="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-still="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif"
+    data-animate="https://media3.giphy.com/media/W6LbnBigDe4ZG/200.gif" data-state="still" class="gif">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(".gif").on("click", function () {
+
+
+      // STEP ONE: study the html above.
+      // Look at all the data attributes.
+      // Run the file in the browser. Look at the images.
+
+      // After we complete steps 1 and 2 we'll be able to pause gifs from giphy.
+
+      // STEP TWO: make a variable named state and then store the image's data-state into it.
+      // Use the .attr() method for this.
+
+      // ============== FILL IN CODE HERE FOR STEP TWO =========================
+
+      var state = $(this).attr("data-state");
+        // we create a variable called "state" that grabs the "data-state" attribute of "this", or the gif we are clicking on to activate the function
+
+      // =============================================
+
+      // STEP THREE: Check if the variable state is equal to 'still',
+      // then update the src attribute of this image to it's data-animate value,
+      // and update the data-state attribute to 'animate'.
+
+      // If state is equal to 'animate', then update the src attribute of this
+      // image to it's data-still value and update the data-state attribute to 'still'
+      // ============== FILL IN CODE HERE FOR STEP THREE =========================
+
+
+      if (state === "still") {
+          // it then checks the data-state that state just grabbed and checks if it labled "still"
+        $(this).attr("src", $(this).attr("data-animate"));
+        // if it is still, then the function grabs THIS gif we are clicking on, and changes the attribute of the src image into the data-animate attribute, located within the gif
+        $(this).attr("data-state", "animate");
+        //we then grab the attribute of THIS again, and this time we change the data-state label to "animate". the "animate" label is useless to the actual gif, but it does tell the rest of the code that the gif is animated, which is necessary for the else statement of the code to work
+
+      } else if (state === "animate") {
+        //since we changed the data-state, defined in the state function, to animate in the previous part of the ifelse, then we can read the property of data-state as "animate" and we can be able to change it if this is true
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+      }
+
+      // ==============================================
+
+      // STEP FOUR: open the file in the browser and click on the images.
+      // Then click again to pause.
+    });
+  </script>
+</body>
+
+</html>
