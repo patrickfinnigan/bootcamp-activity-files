@@ -19,11 +19,13 @@ var inquire = require("inquirer")
 
 // Take in the command line arguments
 inquire
-  .prompt([{
+  .prompt([
+    {
     type: "input",
     message: "Where do you want to geocode?",
     name: "location"
-  }]).then((userInput) => {
+    }
+]).then((userInput) => {
     geocoder.geocode(userInput.location, (error, data) => {
       console.log(JSON.stringify(data, null, 2));
     })
