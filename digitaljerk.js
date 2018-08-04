@@ -54,4 +54,4 @@ function Pet(name, species, type, demeanor, hungry, sleepy, bored, age) {
 
 const Scrungo = new Pet("Scrungo", "Silly Sausage", "Blazing", "Doofus", true, true, true, 0);
 
-Scrungo.printStats();
+Scrungo.printStats()
