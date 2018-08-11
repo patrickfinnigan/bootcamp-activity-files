@@ -1,4 +1,4 @@
-SELECT * FROM big_data_musicdb.songs;
+SELECT * FROM bsongsig_data_musicdb.songs;
 
 USE big_data_musicDB;
 
